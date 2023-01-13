@@ -25,6 +25,16 @@ class MainPasswordGeneratorWindow(QWidget):
         self.set_btn = QPushButton("ساخت پسورد" , self)
         self.set_btn.setGeometry(225 , 190 , 200 , 45)
         self.set_btn.setStyleSheet("background-color:#060a12;color:white;border-radius:10px;outline:none;")
+        self.set_btn.clicked.connect(self.set_pass)
+        self.chars = []
+        self.allow_chars = ('aqzswxdecrfvgtbhynjumki,lo.p;[1234567890-=!@#$%^&*()_+/*-`~')
+    def set_pass(self):
+        if self.range >= 10 :
+            for char in range(self.range):
+                char = random.choice(self.allow_chars)
+                self.chars.append(char)
+            new_password = ''.join(self.chars)
+
 window = MainPasswordGeneratorWindow()
 window.show()
 sys.exit(app.exec())
