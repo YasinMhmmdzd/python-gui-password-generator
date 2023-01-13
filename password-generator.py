@@ -7,7 +7,8 @@ app = QApplication(sys.argv)
 class MainPasswordGeneratorWindow(QWidget):
     def __init__(self):
         super(MainPasswordGeneratorWindow, self).__init__()
-
+        self.setWindowTitle("پسورد ساز فارسی")
+        self.setFont(QFont("A Iranian Sans" , 25))
 
 window = MainPasswordGeneratorWindow()
 window.show()
