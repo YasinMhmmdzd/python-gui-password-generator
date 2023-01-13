@@ -24,7 +24,7 @@ class MainPasswordGeneratorWindow(QWidget):
         self.range.setStyleSheet("border:1px solid #bbb;padding:10px;border-radius:10px;")
         self.set_btn = QPushButton("ساخت پسورد" , self)
         self.set_btn.setGeometry(225 , 190 , 200 , 45)
-        self.set_btn.setStyleSheet("background-color:#214587;color:white;border-radius:10px;outline:none;")
+        self.set_btn.setStyleSheet("background-color:#060a12;color:white;border-radius:10px;outline:none;")
 window = MainPasswordGeneratorWindow()
 window.show()
 sys.exit(app.exec())
