@@ -28,12 +28,16 @@ class MainPasswordGeneratorWindow(QWidget):
         self.set_btn.clicked.connect(self.set_pass)
         self.chars = []
         self.allow_chars = ('aqzswxdecrfvgtbhynjumki,lo.p;[1234567890-=!@#$%^&*()_+/*-`~')
+        self.pass_label = QLabel('', self)
+        self.range_float = float(self.range.text())
+        self.range_int = int(self.range_float)
     def set_pass(self):
-        if self.range >= 10 :
-            for char in range(self.range):
+        if self.range_int >= 10 :
+            for char in range(self.range_int):
                 char = random.choice(self.allow_chars)
                 self.chars.append(char)
             new_password = ''.join(self.chars)
+            self.pass_label.setText(new_password)
 
 window = MainPasswordGeneratorWindow()
 window.show()
